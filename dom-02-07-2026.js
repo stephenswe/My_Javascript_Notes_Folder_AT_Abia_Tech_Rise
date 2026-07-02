@@ -1,0 +1,46 @@
+// Document Object Model (DOM)
+// The browser sees html files as a document file.
+// Dom is a way that javascript is able to interact with the HTML fo a webpage. It allows developers to manipulate the
+// structure, style, and content of web  pages dynamically.
+
+// selectors are methods that javascript  uses to access html elements, attributes, contents etc.
+
+// getElementsByTagName()
+
+
+// getElemetsByTagName
+// getElementsByClassName
+// getElementsById
+// querySelector
+// querySelectorAll
+
+const paragraph = document.getElementsByTagName("p");
+console.log(paragraph)
+
+// innerHTML: returns everything inside an element including the child elements and their contents
+
+const anchor1 = document.getElementsByClassName("about");
+// textContent and inner Text are used to return the contents of an elements 
+
+console.log(anchor1[1].textContent );
+console.log(anchor1[0].innerText );
+
+// the differece between innerText  and textContent is that innerText respects Css visibility  while textContent does not 
+
+console.log(anchor1[2].innerText);
+console.log(anchor1[2].textContent);
+
+// getElementsById returns an element using its id.
+
+const paragraph2 = document.getElementById("p2");
+console.log(paragraph2.textContent);
+
+//queryselector
+
+const Course = document.querySelector("div")
+console.log(Course.textContent);
+
+const course2 = document.querySelector(".div2");
+console.log(course2.textContent);
+
+
