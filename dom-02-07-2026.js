@@ -43,4 +43,61 @@ console.log(Course.textContent);
 const course2 = document.querySelector(".div2");
 console.log(course2.textContent);
 
+const p3 = document.querySelector("#ronaldo")
+console.log(p3.outerHTML);
+
+
+const list = document.querySelectorAll("li");
+list.forEach((li) => {
+
+    console.log(`When i went to the market, I bought ${li.textContent}`);
+
+});
+
+
+// Classwork
+
+// Using Javascript without touching your HTML.
+// Change all the contents of your list(li);
+
+// Answers
+const secondListFoods = ['Tea & Bread', 'Spaghetti', 'Potatoes', 'Plantain'];
+const thirdListFoods = ['Abacha', 'Okpa', 'Ukwa', 'Fio-fio', 'Agbugbu']
+
+list.forEach((item, index) => {
+    if (thirdListFoods[index]) {
+        item.textContent = thirdListFoods[index];
+    }
+});
+
+
+// Miss Oluomachi
+// Modify Elements
+// Create Elements
+
+const chief = document.createElement("p");
+
+chief.textContent = "We are Developers";
+
+document.body.appendChild(chief);
+
+
+const  contain  = document.getElementById("contain");
+
+const P =  document.createElement("p");
+
+P.textContent = 'A child of the section';
+
+contain.appendChild(P);
+
+
+// removeElement()
+
+const hi = document.getElementById('hello');
+hi.remove();
+
+
+const test = document.getElementById("coco");
+
+test.style.color = "blue";
 
