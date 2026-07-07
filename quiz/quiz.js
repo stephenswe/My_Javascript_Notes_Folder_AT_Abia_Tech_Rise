@@ -80,3 +80,25 @@ function loadQuestion() {
     })
 
 }
+
+// this is a function for checking your answer
+function  checkAnswer (selectedIndex){
+    if (hasAnswered){
+        return;
+    }
+
+    hasAnswered = true;
+    const current = quizQuestions [currentQuestionIndex];
+    const correctIndex = current.correctIndex;
+
+
+    if(selectedIndex === correctIndex){
+        optionButtons[selectedIndex].style.backgroundColor = "green";
+        score = score + 1;
+
+    }else {
+        optionButtons[selectedIndex].style.backgroundColor = "salmon";
+        optionButtons =[correctIndex].style.backgroundColor = "green";
+    }
+
+}
