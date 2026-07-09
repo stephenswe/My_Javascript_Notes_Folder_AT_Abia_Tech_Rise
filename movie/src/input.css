@@ -1,0 +1,11 @@
+@import "tailwindcss";
+button {
+  @apply bg-black px-3 py-2 rounded-md hover:bg-black/40 text-white;
+}
+dialog::backdrop {
+  @apply bg-[rgba(0,0,0,0.5)];
+}
+form input,
+textarea {
+  @apply block border text-gray-800 w-full py-3 px-4 rounded-md;
+}

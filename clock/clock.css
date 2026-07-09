@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+div{
+    background-color: rgb(203, 23, 23);
+    width: 20%;
+    margin: 20px;
+    height: 40%;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#clock{
+    color: whitesmoke;
+    font-size: 25px;
+}

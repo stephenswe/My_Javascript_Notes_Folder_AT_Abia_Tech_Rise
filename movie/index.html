@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechRise Movies</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-black text-white">
+    <header class="bg-gray-500 px-4 py-6">
+      <h2 class="font-mono text-3xl">MOVIEHUB</h2>
+    </header>
+    <main class="min-h-screen px-10 py-12 bg-[rgb(24,24,22)]">
+      <section class="flex justify-between items-center">
+        <input
+          type="text"
+          class="bg-gray-200 text-gray-800 w-[40vw] border-none placeholder:text-gray-400 px-4 py-3 rounded-md"
+          placeholder="Search for a movie" />
+        <button id="addMovie">Add Movie +</button>
+      </section>
+      <section class="flex gap-4 items-center mt-10">
+        <button>All</button>
+        <button>Comedy</button>
+        <button>Action</button>
+        <button>Sci-Fi</button>
+      </section>
+      <dialog
+        class="w-150 max-w-[90%] fixed left-1/2 top-1/2 z-50 px-10 py-4 rounded-md overflow-y-auto max-h-[90vh] -translate-y-1/2 -translate-x-1/2">
+        <form method="dialog" class="space-y-3">
+          <h2 class="text-2xl font-medium">Add a new movie</h2>
+          <input type="text" placeholder="Title" required />
+          <input type="text" placeholder="Genre" required />
+          <input type="number" placeholder="Year" required />
+          <input type="number" placeholder="Rating" step="0.1" required />
+          <input type="text" placeholder="Poster url" required />
+          <textarea placeholder="Description" required></textarea>
+          <button type="submit">Save</button>
+          <button id="cancel" class="ml-2">Cancel</button>
+        </form>
+      </dialog>
+      <section id="movie-grid"></section>
+    </main>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
