@@ -39,6 +39,8 @@ let movieList = [
 
 const addMovieBtn = document.querySelector("#addMovie");
 const popUp = document.querySelector("dialog");
+const closeBtn = document.querySelector("#cancel");
+const movieSection = document.querySelector("#movie-grid");
 
 // show dialog function
 addMovieBtn.addEventListener("click", () => {
@@ -46,4 +48,26 @@ addMovieBtn.addEventListener("click", () => {
     // showModal() is the method that will display that dialog.
 });
 
-// cancel dialog function 
+// close dialog function 
+closeBtn.addEventListener("click", () => {
+  popUp.close();
+});
+
+// movie render function 
+
+function render(movies = movieList) {
+  movieSection.innerHTML= "";
+  movies.forEach((m) =>{
+    const movieDiv = document.createElement("div");
+    movieDiv.innerHTML = `<img src=${m.poster} width=${300} height=${100} 
+    alt=${m.title}class="object-cover" />
+
+    <div>
+      <h2></h2>
+    </div>`;
+    movieSection.append(movieDiv);
+  });
+
+}
+
+render();
