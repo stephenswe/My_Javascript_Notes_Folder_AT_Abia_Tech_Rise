@@ -5,7 +5,10 @@ button {
 dialog::backdrop {
   @apply bg-[rgba(0,0,0,0.5)];
 }
-form input,
-textarea {
+form input, textarea {
   @apply block border text-gray-800 w-full py-3 px-4 rounded-md;
+}
+
+.card {
+    @apply bg-[#101010] overflow-hidden rounded-md;
 }
