@@ -36,46 +36,54 @@ let movieList = [
     description: "Buddy cop",
   },
 ];
-
 const addMovieBtn = document.querySelector("#addMovie");
 const popUp = document.querySelector("dialog");
 const closeBtn = document.querySelector("#cancel");
 const movieSection = document.querySelector("#movie-grid");
 
-// show dialog function
+// show Dialog function
 addMovieBtn.addEventListener("click", () => {
   popUp.showModal();
-  // showModal() is the method that will display that dialog.
 });
 
-// close dialog function 
+// close dialog function
 closeBtn.addEventListener("click", () => {
   popUp.close();
 });
 
-// movie render function 
+// movie render function
 
 function render(movies = movieList) {
   movieSection.innerHTML = "";
   movies.forEach((m) => {
     const movieDiv = document.createElement("div");
     movieDiv.classList.add("card");
-    movieDiv.innerHTML = `<img src=${m.poster} width=${300} height=${100} 
-    alt=${m.title}class="object-cover" />
-
-    <div>
-      <h2 class="text-2xl font-bold">${m.title}</h2>
-      <p>${m.description}</p>
-      <p class="text-gray-600">${m.genre}</p>
-      <p>${m.rating}</p>
-      <div class="flex justify-between items-center">
-      <p>${m.year}</p>
-      <button>Delete</button>
-      </div>
+    movieDiv.innerHTML = `
+    <img src=${m.poster} width=${500} height=${100} alt=${m.title}  class="object-cover"/>
+    <div class="px-4 py-2">
+    <h2 class="text-2xl font-bold">${m.title}</h2>
+    <p>${m.description}</p>
+    <p class="text-gray-600">${m.genre}</p>
+    <p class="text-yellow-600">${m.rating}/10</p>
+    <div class="flex justify-between items-center">
+    <p>${m.year}</p>
+    <button id="deleteBtn">Delete</button>
+    </div>
     </div>`;
+
+    // Delete button
+    const deleteBtn=movieDiv.querySelector("#deleteBtn");
+    deleteBtn.addEventListener("click", () => {
+      render(movies.filter((x) => x.id !==m.id));
+    })
     movieSection.append(movieDiv);
   });
-
 }
-
 render();
+
+//Search function
+const searchInput = document.querySelector("#search");
+searchInput.addEventListener("input", (e) => {
+  render(movieList.filter((m) =>m.title.toLowerCase().includes(e.target.value.toLowerCase()),
+  ));
+})

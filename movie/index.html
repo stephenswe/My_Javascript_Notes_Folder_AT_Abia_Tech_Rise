@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechRise Movies</title>
-    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="/src/output.css" />
   </head>
   <body class="bg-black text-white">
     <header class="bg-gray-500 px-4 py-6">
@@ -13,7 +13,7 @@
     <main class="min-h-screen px-10 py-12 bg-[rgb(24,24,22)]">
       <section class="flex justify-between items-center">
         <input
-          type="text"
+          type="text" id="search"
           class="bg-gray-200 text-gray-800 w-[40vw] border-none placeholder:text-gray-400 px-4 py-3 rounded-md"
           placeholder="Search for a movie" />
         <button id="addMovie">Add Movie +</button>
@@ -38,8 +38,8 @@
           <button id="cancel" class="ml-2">Cancel</button>
         </form>
       </dialog>
-      <section class="grid grid-cols-4 gap-4 mt-10" id="movie-grid"></section>
+      <section class="grid grid-cols-3 gap-4 mt-10" id="movie-grid"></section>
     </main>
-    <script src="./src/script.js"></script>
+    <script src="/src/script.js"></script>
   </body>
 </html>
