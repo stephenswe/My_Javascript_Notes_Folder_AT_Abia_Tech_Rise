@@ -6,7 +6,7 @@ dialog::backdrop {
   @apply bg-[rgba(0,0,0,0.5)];
 }
 form input,
-textarea {
+textarea, Select{
   @apply block border text-gray-800 w-full py-3 px-4 rounded-md;
 }
 .card {

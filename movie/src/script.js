@@ -67,14 +67,14 @@ function render(movies = movieList) {
     <p class="text-yellow-600">${m.rating}/10</p>
     <div class="flex justify-between items-center">
     <p>${m.year}</p>
-    <button id="deleteBtn">Delete</button>
+    <button class="deleteBtn">Delete</button>
     </div>
     </div>`;
 
     // Delete button
-    const deleteBtn=movieDiv.querySelector("#deleteBtn");
+    const deleteBtn = movieDiv.querySelector(".deleteBtn");
     deleteBtn.addEventListener("click", () => {
-      render(movies.filter((x) => x.id !==m.id));
+      render(movies.filter((x) => x.id !== m.id));
     })
     movieSection.append(movieDiv);
   });
@@ -84,6 +84,19 @@ render();
 //Search function
 const searchInput = document.querySelector("#search");
 searchInput.addEventListener("input", (e) => {
-  render(movieList.filter((m) =>m.title.toLowerCase().includes(e.target.value.toLowerCase()),
+  render(movieList.filter((m) => m.title.toLowerCase().includes(e.target.value.toLowerCase()),
   ));
-})
+});
+
+const filterButtons = document.querySelectorAll(".filterBtn");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.textContent === ALL) {
+      render();
+    } else {
+      render(movieList.filter((m) => m.genre === button.textContent));
+    }
+
+  });
+});
